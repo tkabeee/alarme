@@ -2,7 +2,7 @@
   "name": "alarme",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "tkabeee <tkabee@gmail.com>",
+  "author": "github.com/tkabeee",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
