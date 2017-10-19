@@ -1,13 +1,11 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
-</template>
-
 <script>
+import TimeEditor from '@/components/TimeEditor'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    TimeEditor
+  }
 }
 </script>
 
@@ -21,3 +19,9 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+<template>
+  <div id="app">
+    <time-editor />
+  </div>
+</template>
