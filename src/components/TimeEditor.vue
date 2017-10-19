@@ -1,4 +1,6 @@
 <script>
+import Moment from 'moment'
+
 export default {
   name: 'TimeEditor',
   data () {
@@ -7,6 +9,11 @@ export default {
     }
   }
 }
+
+// TODO: new Date() する時はlocaleを考慮する
+// TODO: number inputのプレイスホルダに現在時刻を表示する
+
+// TODO:
 </script>
 
 <style>
@@ -14,9 +21,9 @@ export default {
 
 <template>
   <div class="editor">
-    <input type="number" value="" min="0" max="9" step="1" required/>
-    <input type="number" value="" min="0" max="9" step="1" required/>
-    <input type="number" value="" min="0" max="9" step="1" required/>
-    <input type="number" value="" min="0" max="9" step="1" required/>
+    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
+    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
+    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
+    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
   </div>
 </template>

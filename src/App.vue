@@ -1,10 +1,12 @@
 <script>
 import TimeEditor from '@/components/TimeEditor'
+import TimeList from '@/components/TimeList'
 
 export default {
   name: 'app',
   components: {
-    TimeEditor
+    TimeEditor,
+    TimeList
   }
 }
 </script>
@@ -23,5 +25,6 @@ export default {
 <template>
   <div id="app">
     <time-editor />
+    <time-list />
   </div>
 </template>
