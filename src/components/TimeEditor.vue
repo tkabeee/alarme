@@ -1,5 +1,5 @@
 <script>
-import Moment from 'moment'
+// import moment from 'moment'
 
 export default {
   name: 'TimeEditor',
@@ -21,9 +21,7 @@ export default {
 
 <template>
   <div class="editor">
-    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
-    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
-    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
-    <input type="number" value="" placeholder="" min="0" max="9" step="1" required/>
+    <input type="number" v-model="hour" placeholder="" min="0" max="9" step="1" required/>
+    <input type="number" v-model="minute" placeholder="" min="0" max="9" step="1" required/>
   </div>
 </template>
