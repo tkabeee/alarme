@@ -1,6 +1,5 @@
 <script>
 export default {
-  
 }
 
 // LocalStorage に保存されたタイムデータをリストで表示
