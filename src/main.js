@@ -7,7 +7,7 @@ import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-var app = new Vue({
+new Vue({
   el: '#app',
   router,
   template: '<App/>',
@@ -19,7 +19,12 @@ var app = new Vue({
   },
 
   watch: {
+  },
 
+  methods: {
+    updateNumber (value) {
+      this.hour = value
+    }
   },
 
   beforeCreate: function () {
@@ -32,7 +37,6 @@ var app = new Vue({
   },
 
   mounted: function () {
-    console.log(app)
   },
 
   beforeUpdate: function () {

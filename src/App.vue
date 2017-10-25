@@ -7,6 +7,11 @@ export default {
   components: {
     TimeEditor,
     TimeList
+  },
+  methods: {
+    updateNumber (value) {
+      console.log(value)
+    }
   }
 }
 </script>
@@ -24,7 +29,9 @@ export default {
 
 <template>
   <div id="app">
-    <time-editor />
+    <time-editor
+      v-on:update-number="updateNumber"
+    />
     <time-list />
   </div>
 </template>
