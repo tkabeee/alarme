@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,13 +29,17 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.apHead {
+  border-bottom: 1px solid #ddd
+}
 </style>
 
 <template>
   <div id="app">
-    <time-editor
-      v-on:update-number="updateNumber"
-    />
+    <header class="apHead">
+      <h1>Alarme</h1>
+    </header>
+    <time-editor />
     <time-list />
   </div>
 </template>
