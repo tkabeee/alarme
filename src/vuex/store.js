@@ -25,6 +25,7 @@ const mutations = {
 }
 
 export default new Vuex.Store({
+  strict: process.env.NODE_ENV !== 'production',
   state,
   actions,
   getters,
