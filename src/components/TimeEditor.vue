@@ -1,24 +1,21 @@
 <script>
-// import moment from 'moment'
+import Selector from '@/components/Selector'
 
 export default {
   name: 'TimeEditor',
-  data () {
-    return {
-      hour: '',
-      minute: ''
-    }
+  components: {
+    Selector
   },
   methods: {
     updateNumber (e) {
-      // console.log(e.target.value)
-      this.$emit('update-number', e.target.value)
+      console.log(e)
     }
   }
 }
 
 // TODO: new Date() する時はlocaleを考慮する
 // TODO: number inputのプレイスホルダに現在時刻を表示する
+// TODO: hourとminuteの更新をcommitする
 </script>
 
 <style>
@@ -26,7 +23,7 @@ export default {
 
 <template>
   <div class="editor">
-    <input type="number" v-model="hour" v-on:input="updateNumber" placeholder="" min="0" max="23" step="1" required/>
-    <input type="number" v-model="minute" v-on:input="updateNumber" placeholder="" min="0" max="59" step="1" required/>
+    <selector />
+    <input type="number" v-on:input="updateNumber" placeholder="" min="0" max="59" step="1" required/>
   </div>
 </template>

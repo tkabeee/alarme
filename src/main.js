@@ -14,19 +14,11 @@ new Vue({
   store,
   template: '<App/>',
   components: { App },
-  data: {
-    now: '',
-    hour: '',
-    minute: ''
-  },
 
   watch: {
   },
 
   methods: {
-    updateNumber (value) {
-      this.hour = value
-    }
   },
 
   beforeCreate: function () {
