@@ -7,11 +7,6 @@ export default {
   components: {
     TimeEditor,
     TimeList
-  },
-  methods: {
-    updateNumber (value) {
-      console.log(value)
-    }
   }
 }
 </script>

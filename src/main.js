@@ -7,41 +7,15 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+/**
+ * example:
+ * https://github.com/vuejs/vuex/tree/dev/examples/chat
+ */
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  template: '<App/>',
-  components: { App },
-
-  watch: {
-  },
-
-  methods: {
-  },
-
-  beforeCreate: function () {
-  },
-
-  created: function () {
-  },
-
-  beforeMount: function () {
-  },
-
-  mounted: function () {
-  },
-
-  beforeUpdate: function () {
-  },
-
-  updated: function () {
-  },
-
-  beforeDestroy: function () {
-  },
-
-  destroyed: function () {
-  }
+  render: h => h(App)
 })

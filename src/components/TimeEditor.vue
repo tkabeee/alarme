@@ -1,4 +1,9 @@
 <script>
+import {
+  mapState,
+  mapMutations
+} from 'vuex'
+
 import Selector from '@/components/Selector'
 
 export default {
@@ -6,10 +11,17 @@ export default {
   components: {
     Selector
   },
+  computed: {
+    ...mapState({
+      hour: state => state.hour,
+      minute: state => state.minute
+    })
+  },
   methods: {
-    updateNumber (e) {
-      console.log(e)
-    }
+    ...mapMutations([
+      'updateHour',
+      'updateMinute'
+    ])
   }
 }
 
@@ -23,7 +35,7 @@ export default {
 
 <template>
   <div class="editor">
-    <selector />
-    <input type="number" v-on:input="updateNumber" placeholder="" min="0" max="59" step="1" required/>
+    <input type="number" :value="hour" @input="updateHour" placeholder="" min="0" max="59" step="1" required/>
+    <input type="number" :value="minute" @input="updateMinute" placeholder="" min="0" max="59" step="1" required/>
   </div>
 </template>
