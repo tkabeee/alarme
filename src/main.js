@@ -7,11 +7,6 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-/**
- * example:
- * https://github.com/vuejs/vuex/tree/dev/examples/chat
- */
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

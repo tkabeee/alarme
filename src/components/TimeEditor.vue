@@ -22,10 +22,6 @@ export default {
     'updateMinute'
   ])
 }
-
-// TODO: new Date() する時はlocaleを考慮する
-// TODO: number inputのプレイスホルダに現在時刻を表示する
-// TODO: hourとminuteの更新をcommitする
 </script>
 
 <style>
