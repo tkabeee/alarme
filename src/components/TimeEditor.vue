@@ -1,7 +1,7 @@
 <script>
 import {
   mapState,
-  mapMutations
+  mapActions
 } from 'vuex'
 
 import Selector from '@/components/Selector'
@@ -12,17 +12,15 @@ export default {
     Selector
   },
   computed: {
-    ...mapState({
-      hour: state => state.hour,
-      minute: state => state.minute
-    })
-  },
-  methods: {
-    ...mapMutations([
-      'updateHour',
-      'updateMinute'
+    ...mapState([
+      'hour',
+      'minute'
     ])
-  }
+  },
+  methods: mapActions([
+    'updateHour',
+    'updateMinute'
+  ])
 }
 
 // TODO: new Date() する時はlocaleを考慮する
