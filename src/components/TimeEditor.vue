@@ -5,23 +5,30 @@ import {
 } from 'vuex'
 
 import Selector from '@/components/Selector'
-import moment from 'moment'
 
 export default {
   name: 'TimeEditor',
   components: {
     Selector
   },
+  data () {
+    return {
+      now: this.getTime()
+    }
+  },
   computed: {
     ...mapState([
       'hour',
       'minute'
     ]),
-    nowHour () {
-      return this.moment().format('h')
+    hours () {
+      return Math.trunc(this.now / 60 / 60) % 24
     },
-    nowMinute () {
-      return this.moment().format('mm')
+    minutes () {
+      return Math.trunc(this.now / 60) % 60
+    },
+    seconds () {
+      return this.now % 60
     }
   },
   methods: {
@@ -29,9 +36,16 @@ export default {
       'updateHour',
       'updateMinute'
     ]),
-    moment: function () {
-      return moment()
+    getTime () {
+      const timeZoneOffset = new Date().getTimezoneOffset()
+      const time = Date.now() - (timeZoneOffset * 60 * 1000)
+      return Math.trunc((new Date(time)).getTime() / 1000)
     }
+  },
+  mounted () {
+    window.setInterval(() => {
+      this.now = Math.trunc(this.getTime())
+    }, 1000)
   }
 }
 </script>
@@ -41,7 +55,8 @@ export default {
 
 <template>
   <div class="editor">
-    <input type="number" :value="hour" @input="updateHour" :placeholder="nowHour" min="0" max="59" step="1" required/>
-    <input type="number" :value="minute" @input="updateMinute" :placeholder="nowMinute" min="0" max="59" step="1" required/>
+    <input type="number" :value="hour" @input="updateHour" :placeholder="hours" min="0" max="59" step="1" required/>
+    <input type="number" :value="minute" @input="updateMinute" :placeholder="minutes" min="0" max="59" step="1" required/>
+    <!-- <input type="number" :placeholder="seconds" min="0" max="59" step="1" /> -->
   </div>
 </template>
