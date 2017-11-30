@@ -22,10 +22,12 @@ export default {
       'minute'
     ]),
     hours () {
-      return Math.trunc(this.now / 60 / 60) % 24
+      const hour = Math.trunc(this.now / 60 / 60) % 24
+      return ('00' + hour).slice(-2)
     },
     minutes () {
-      return Math.trunc(this.now / 60) % 60
+      const minute = Math.trunc(this.now / 60) % 60
+      return ('00' + minute).slice(-2)
     },
     seconds () {
       return this.now % 60
